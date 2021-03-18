@@ -5,7 +5,7 @@ Tags: two-columns, three-columns, left-sidebar, right-sidebar, custom-background
 Requires at least: 4.7
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -75,6 +75,9 @@ https://stocksnap.io/photo/woman-portrait-J2PTEFNZTE
 https://stocksnap.io/photo/woman-guitar-RM4PDN76FM
 
 == Changelog ==
+
+= 1.0.4 - Mar 9 2021 =
+* Added social menu
 
 = 1.0.3 - Mar 9 2021 =
 * Added theme url 

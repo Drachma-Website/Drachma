@@ -9,7 +9,6 @@ function ostrich_blog_get_default_mods() {
 	$ostrich_blog_default_mods = array(
 		// Footer copyright
 		'ostrich_blog_copyright_txt' => esc_html__( 'Copyright &copy; [the-year] [site-link]  |  ', 'ostrich-blog' ),
-		'ostrich_blog_power_by_txt'	=> sprintf( esc_html__( 'Theme: %1$s by %2$s.', 'ostrich-blog' ), 'ostrich blog', 'ThemeOstrich' ),
 	);
 
 	return apply_filters( 'ostrich_blog_default_mods', $ostrich_blog_default_mods );
