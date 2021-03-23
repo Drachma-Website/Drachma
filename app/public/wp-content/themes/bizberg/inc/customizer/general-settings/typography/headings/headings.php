@@ -49,7 +49,7 @@ Kirki::add_field( 'bizberg', [
 	'settings'    => 'typography_h1_tablet',
 	'label'       => esc_html__( 'Font Size ( Tablet )', 'bizberg' ),
 	'section'     => 'headings',
-	'default'     => 33,
+	'default'     => apply_filters( 'bizberg_typography_h1_tablet', 33 ),
 	'choices'     => [
 		'min'  => 0,
 		'max'  => 100,
@@ -78,7 +78,7 @@ Kirki::add_field( 'bizberg', [
 	'settings'    => 'typography_h1_mobile',
 	'label'       => esc_html__( 'Font Size ( Mobile )', 'bizberg' ),
 	'section'     => 'headings',
-	'default'     => 27,
+	'default'     => apply_filters( 'bizberg_typography_h1_mobile', 27 ),
 	'choices'     => [
 		'min'  => 0,
 		'max'  => 100,
@@ -151,7 +151,7 @@ Kirki::add_field( 'bizberg', [
 	'settings'    => 'typography_h2_tablet',
 	'label'       => esc_html__( 'Font Size ( Tablet )', 'bizberg' ),
 	'section'     => 'headings',
-	'default'     => 19,
+	'default'     => apply_filters( 'bizberg_typography_h2_tablet', 19 ),
 	'choices'     => [
 		'min'  => 0,
 		'max'  => 100,
@@ -180,7 +180,7 @@ Kirki::add_field( 'bizberg', [
 	'settings'    => 'typography_h2_mobile',
 	'label'       => esc_html__( 'Font Size ( Mobile )', 'bizberg' ),
 	'section'     => 'headings',
-	'default'     => 19,
+	'default'     => apply_filters( 'bizberg_typography_h2_mobile', 19 ),
 	'choices'     => [
 		'min'  => 0,
 		'max'  => 100,
@@ -253,7 +253,7 @@ Kirki::add_field( 'bizberg', [
 	'settings'    => 'typography_h3_tablet',
 	'label'       => esc_html__( 'Font Size ( Tablet )', 'bizberg' ),
 	'section'     => 'headings',
-	'default'     => 24,
+	'default'     => apply_filters( 'bizberg_typography_h3_tablet', 24 ),
 	'choices'     => [
 		'min'  => 0,
 		'max'  => 100,
@@ -282,7 +282,7 @@ Kirki::add_field( 'bizberg', [
 	'settings'    => 'typography_h3_mobile',
 	'label'       => esc_html__( 'Font Size ( Mobile )', 'bizberg' ),
 	'section'     => 'headings',
-	'default'     => 19,
+	'default'     => apply_filters( 'bizberg_typography_h3_mobile', 19 ),
 	'choices'     => [
 		'min'  => 0,
 		'max'  => 100,
@@ -355,7 +355,7 @@ Kirki::add_field( 'bizberg', [
 	'settings'    => 'typography_h4_tablet',
 	'label'       => esc_html__( 'Font Size ( Tablet )', 'bizberg' ),
 	'section'     => 'headings',
-	'default'     => 19,
+	'default'     => apply_filters( 'bizberg_typography_h4_tablet', 19 ),
 	'choices'     => [
 		'min'  => 0,
 		'max'  => 100,
@@ -384,7 +384,7 @@ Kirki::add_field( 'bizberg', [
 	'settings'    => 'typography_h4_mobile',
 	'label'       => esc_html__( 'Font Size ( Mobile )', 'bizberg' ),
 	'section'     => 'headings',
-	'default'     => 19,
+	'default'     => apply_filters( 'bizberg_typography_h4_mobile', 19 ),
 	'choices'     => [
 		'min'  => 0,
 		'max'  => 100,

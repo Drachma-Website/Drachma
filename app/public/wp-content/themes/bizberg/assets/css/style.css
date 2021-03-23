@@ -6845,3 +6845,37 @@ div.enlighter{
 .full-screen-search .close:hover {
     color: #fff !important;
 }
+
+a.featured_image_link:focus{
+    outline: none;
+}
+
+.bizberg_frontpage_video_wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.bizberg_frontpage_video_wrapper video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+}
+
+.bizberg_gradient_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}

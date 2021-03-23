@@ -607,3 +607,9 @@ li[id^="customize-control-upgrade_msg_"] {
     background: #ff3c00;
     color: #fff;
 }
+
+#customize-control-frontpage_video_gradient_presets #input_frontpage_video_gradient_presets label {
+    width: 17%;
+    margin-bottom: 0;
+    margin-right: 7px;
+}

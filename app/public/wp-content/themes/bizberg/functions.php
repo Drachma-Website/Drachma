@@ -994,6 +994,25 @@ function bizberg_get_banner_image_properties(){
 	
 }
 
+function bizberg_get_video(){
+
+	$video_url = bizberg_get_theme_mod( 'frontpage_video_url' );
+
+	if( empty( $video_url ) ){
+		return;
+	} ?>
+
+	<div class="bizberg_frontpage_video_wrapper">
+		<div class="bizberg_gradient_video"></div>
+		<video autoplay muted loop>
+		  	<source src="<?php echo esc_url( $video_url ); ?>">
+		</video>
+	</div>
+
+	<?php
+
+}
+
 function bizberg_get_banner(){ 
 
 	$banner_image_attr = bizberg_get_banner_image_properties(); ?>
@@ -2384,6 +2403,10 @@ function bizberg_get_pro_link(){
 
 		case 'next-level-blog':
 			return 'https://bizbergthemes.com/downloads/next-level-blog-pro/';
+			break;
+
+		case 'bizberg-shop':
+			return 'https://bizbergthemes.com/downloads/bizberg-shop-pro/';
 			break;
 		
 		default:

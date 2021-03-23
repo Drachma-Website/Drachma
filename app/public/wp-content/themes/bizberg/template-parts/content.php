@@ -34,9 +34,11 @@
 
                     <div class="col-xs-5 list_image_wrapper"> 
         	            <header class="entry-header">
-        	                <div class="entry-thumbnail" style="background-image: url( <?php echo esc_url( $post_image_url ); ?> )">
-                                <div class="image-overlay"></div>
-        	                </div>	         
+                            <a href="<?php the_permalink(); ?>" class="featured_image_link">
+            	                <div class="entry-thumbnail" style="background-image: url( <?php echo esc_url( $post_image_url ); ?> )">
+                                    <div class="image-overlay"></div>
+            	                </div>	    
+                            </a>     
         	            </header>
                     </div>
 

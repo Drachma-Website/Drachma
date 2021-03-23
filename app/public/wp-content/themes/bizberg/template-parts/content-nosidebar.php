@@ -5,16 +5,18 @@
             <header class="entry-header">
             	<?php 
             	if( has_post_thumbnail() ){ ?>
-	                <div class="entry-thumbnail">
-	                    <?php 
-	                    the_post_thumbnail( 
-	                    	'large', 
-	                    	array( 
-	                    		'class' => 'img-responsive', 
-	                    		'alt' => esc_attr( get_the_title() ) 
-	                    	) 
-	                    ); ?>
-	                </div>
+                    <a href="<?php the_permalink(); ?>" class="featured_image_link">
+    	                <div class="entry-thumbnail">
+    	                    <?php 
+    	                    the_post_thumbnail( 
+    	                    	'large', 
+    	                    	array( 
+    	                    		'class' => 'img-responsive', 
+    	                    		'alt' => esc_attr( get_the_title() ) 
+    	                    	) 
+    	                    ); ?>
+    	                </div>
+                    </a>
 	                <?php 
 	            } 
 

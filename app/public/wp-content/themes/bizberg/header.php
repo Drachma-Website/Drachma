@@ -191,6 +191,10 @@ if( is_page_template( 'page-templates/full-width.php' )
 		case 'banner':
 			bizberg_get_banner();
 			break;
+
+		case 'video':
+			bizberg_get_video();
+			break;
 		
 		default:
 			# code...

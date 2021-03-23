@@ -9,9 +9,198 @@ Kirki::add_field( 'bizberg', array(
 	'choices'     => array(
 		'banner'   => esc_html__( 'Banner', 'bizberg' ),
 		'slider' => esc_html__( 'Slider', 'bizberg' ),
+		'video' => esc_html__( 'Video', 'bizberg' ),
 		'none' => esc_html__( 'None', 'bizberg' ),
 	)
 ) );
+
+/**
+* Video
+*/
+
+Kirki::add_field( 'bizberg', [
+    'type'            => 'upload',
+    'settings'        => 'frontpage_video_url',
+    'label'           => esc_html__('Video', 'bizberg'),
+    'section'         => 'front_page_hero',
+    'default'         => apply_filters( 'bizberg_frontpage_video_url', '' ),
+    'active_callback' => array(
+        array(
+            'setting'  => 'slider_banner',
+            'operator' => '==',
+            'value'    => 'video'
+        ),
+    ),
+]);
+
+if( function_exists( 'bizberg_kirki_dtm_options' ) ){
+
+    bizberg_kirki_dtm_options( 
+        array(
+            'display' => array(
+                'desktop' => 'desktop',
+                'tablet'  => 'tablet',
+                'mobile'  => 'mobile'
+            ),
+            'field_id' => 'bizberg',
+            'section'  => 'front_page_hero',
+            'settings' => 'bizberg_frontpage_video_url_height',
+            'global_active_callback'    => array(
+                array(
+                    'setting'  => 'slider_banner',
+                    'operator' => '==',
+                    'value'    => 'video'
+                ),
+                array(
+		            'setting'  => 'frontpage_video_url',
+		            'operator' => '!=',
+		            'value'    => ''
+		        )
+            ),
+            'fields'   => array(
+                'slider' => array(
+                    'desktop' => array(
+                        'label' => esc_html__( 'Height', 'bizberg' ),
+                        'settings' => 'bizberg_frontpage_video_url_height',
+                        'default'     => 500,  
+                        'choices'     => [
+                            'min'  => 100,
+                            'max'  => 1000,
+                            'step' => 25,
+                        ],
+                        'transport' => 'auto',
+                        'output' => array(
+                            array(
+                                'element'       => '.bizberg_frontpage_video_wrapper',
+                                'property'      => 'height',
+                                'value_pattern' => '$px'
+                            )
+                        ),
+                    ),
+                    'tablet' => array(
+                        'label' => esc_html__( 'Height', 'bizberg' ),
+                        'settings' => 'bizberg_frontpage_video_url_height',
+                        'default'     => 500,  
+                        'choices'     => [
+                            'min'  => 100,
+                            'max'  => 1000,
+                            'step' => 25,
+                        ],
+                        'transport' => 'auto',
+                        'output' => array(
+                            array(
+                                'element'       => '.bizberg_frontpage_video_wrapper',
+                                'property'      => 'height',
+                                'value_pattern' => '$px',
+                                'media_query'   => '@media (min-width: 481px) and (max-width: 1024px)'
+                            )
+                        ),
+                    ),
+                    'mobile' => array(
+                        'label' => esc_html__( 'Height', 'bizberg' ),
+                        'settings' => 'bizberg_frontpage_video_url_height',
+                        'default'     => 500, 
+                        'choices'     => [
+                            'min'  => 100,
+                            'max'  => 1000,
+                            'step' => 25,
+                        ],
+                        'transport' => 'auto',
+                        'output' => array(
+                            array(
+                                'element'       => '.bizberg_frontpage_video_wrapper',
+                                'property'      => 'height',
+                                'value_pattern' => '$px',
+                                'media_query'   => '@media (min-width: 320px) and (max-width: 480px)'
+                            )
+                        ),
+                    )
+                ),
+            )
+            
+        ) 
+    );
+
+}
+
+Kirki::add_field( 'bizberg', [
+    'type'     => 'radio-image',
+    'settings' => 'frontpage_video_gradient_presets',
+    'label'    => esc_html__('Choose Gradient Presets', 'bizberg'),
+    'section'  => 'front_page_hero',
+    'default'  => 'linear-gradient(200deg, #00c9ad 0%, #00b8c6 50%, #00a3da 100%)',
+    'choices'  => [
+        'linear-gradient(212deg, #667eea 0%, #9866ea 82%, #764ba2 100%)'  => get_template_directory_uri() . '/assets/images/gradient-preset-1.jpg',
+        'linear-gradient(200deg, #00c9ad 0%, #00b8c6 50%, #00a3da 100%)'  => get_template_directory_uri() . '/assets/images/gradient-preset-2.jpg',
+        'linear-gradient(25deg, #6b347e 0%, #1182a4 40%, #2cc389 100%)'  => get_template_directory_uri() . '/assets/images/gradient-preset-3.jpg',
+        'linear-gradient(25deg, #f093fb 0%, #f279be 40%, #f5576c 100%)'  => get_template_directory_uri() . '/assets/images/gradient-preset-4.jpg',
+        'linear-gradient(25deg, #43e97b 0%, #3df1a9 40%, #38f9d7 100%)'  => get_template_directory_uri() . '/assets/images/gradient-preset-5.jpg',
+        'linear-gradient(25deg, #f6d365 0%, #f9bb74 50%, #fda085 100%)'  => get_template_directory_uri() . '/assets/images/gradient-preset-6.jpg',
+        'linear-gradient(25deg, #f44336 0%, #dc336e 50%, #a9458f 100%)'  => get_template_directory_uri() . '/assets/images/gradient-preset-7.jpg',
+        'linear-gradient(62deg, #f9f871 0%, #ace987 50%, #6ed39f 100%)'  => get_template_directory_uri() . '/assets/images/gradient-preset-8.jpg',
+        'linear-gradient(182deg, #b7a6b5 0%, #deabbc 50%, #ffb1b0 100%)'  => get_template_directory_uri() . '/assets/images/gradient-preset-9.jpg',
+        'linear-gradient(117deg, #ffcc95 0%, #ee9661 50%, #b26231 100%)' => get_template_directory_uri() . '/assets/images/gradient-preset-10.jpg',
+    ],
+    'transport' => 'auto',
+    'output' => array(
+        array(
+            'element'       => '.bizberg_gradient_video',
+            'property'      => 'background',
+            'value_pattern' => '$'
+        )
+    ),
+    'active_callback' => array(
+        array(
+            'setting'  => 'slider_banner',
+            'operator' => '==',
+            'value'    => 'video'
+        ),
+        array(
+            'setting'  => 'frontpage_video_url',
+            'operator' => '!=',
+            'value'    => ''
+        ),
+    )
+]);
+
+Kirki::add_field( 'bizberg', [
+    'type'            => 'select',
+    'settings'        => 'frontpage_video_gradient_presets_opacity',
+    'label'           => esc_html__('Gradient Opacity', 'bizberg'),
+    'section'         => 'front_page_hero',
+    'default'         => '0.5',
+    'choices'         => [
+        '0'   => '0',
+        '0.1' => '0.1',
+        '0.2' => '0.2',
+        '0.3' => '0.3',
+        '0.4' => '0.4',
+        '0.5' => '0.5',
+        '0.6' => '0.6',
+        '0.7' => '0.7',
+        '0.8' => '0.8',
+        '0.9' => '0.9',
+    ],
+    'transport'       => 'auto',
+    'active_callback' => array(
+        array(
+            'setting'  => 'slider_banner',
+            'operator' => '==',
+            'value'    => 'video',
+        ),
+        array(
+            'setting'  => 'frontpage_video_url',
+            'operator' => '!=',
+            'value'    => ''
+        ),
+    ),
+    'output'          => array(
+        array(
+            'element'  => '.bizberg_gradient_video',
+            'property' => 'opacity',
+        ),
+    ),
+]);
 
 /**
 * Banner

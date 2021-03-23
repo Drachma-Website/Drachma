@@ -41,7 +41,7 @@ bizberg_kirki_dtm_options(
                 'desktop' => array(
                     'label' => esc_html__( 'Title Font Size ( Desktop )', 'bizberg' ),
                     'settings' => 'homepage_title_font_size_desktop',
-                    'default' => 40,
+                    'default' => apply_filters( 'bizberg_homepage_title_font_size_desktop', 40 ),
                     'choices'     => [
                         'min'  => 10,
                         'max'  => 100,
@@ -59,7 +59,7 @@ bizberg_kirki_dtm_options(
                 'tablet' => array(
                     'label' => esc_html__( 'Title Font Size ( Tablet )', 'bizberg' ),
                     'settings' => 'homepage_title_font_size_tablet',
-                    'default' => 35,
+                    'default' => apply_filters( 'bizberg_homepage_title_font_size_tablet', 35 ),
                     'choices'     => [
                         'min'  => 10,
                         'max'  => 100,
@@ -78,7 +78,7 @@ bizberg_kirki_dtm_options(
                 'mobile' => array(
                     'label' => esc_html__( 'Title Font Size ( Mobile )', 'bizberg' ),
                     'settings' => 'homepage_title_font_size_mobile',
-                    'default' => 30,
+                    'default' => apply_filters( 'bizberg_homepage_title_font_size_mobile', 30 ),
                     'choices'     => [
                         'min'  => 10,
                         'max'  => 100,
@@ -140,10 +140,10 @@ bizberg_kirki_dtm_options(
                 'desktop' => array(
                     'label' => esc_html__( 'Spacing ( Desktop )', 'bizberg' ),
                     'settings' => 'homepage_top_bottom_spacing_desktop',
-                    'default'     => [
+                    'default'     => apply_filters( 'bizberg_homepage_top_bottom_spacing_desktop', [
                         'padding-top'    => '30',
                         'padding-bottom' => '50'
-                    ],  
+                    ]),  
                     'choices'     => [
                         'labels' => [
                             'padding-top'  => esc_html__( 'Top', 'bizberg' ),
@@ -160,10 +160,10 @@ bizberg_kirki_dtm_options(
                 'tablet' => array(
                     'label' => esc_html__( 'Spacing ( Tablet )', 'bizberg' ),
                     'settings' => 'homepage_top_bottom_spacing_tablet',
-                    'default'     => [
+                    'default'     => apply_filters( 'bizberg_homepage_top_bottom_spacing_tablet', [
                         'padding-top'    => '30',
                         'padding-bottom' => '50'
-                    ],  
+                    ]),  
                     'choices'     => [
                         'labels' => [
                             'padding-top'  => esc_html__( 'Top', 'bizberg' ),
@@ -181,10 +181,10 @@ bizberg_kirki_dtm_options(
                 'mobile' => array(
                     'label' => esc_html__( 'Spacing ( Mobile )', 'bizberg' ),
                     'settings' => 'homepage_top_bottom_spacing_mobile',
-                    'default'     => [
+                    'default'     => apply_filters( 'bizberg_homepage_top_bottom_spacing_mobile', [
                         'padding-top'    => '30',
                         'padding-bottom' => '30'
-                    ],  
+                    ]),  
                     'choices'     => [
                         'labels' => [
                             'padding-top'  => esc_html__( 'Top', 'bizberg' ),

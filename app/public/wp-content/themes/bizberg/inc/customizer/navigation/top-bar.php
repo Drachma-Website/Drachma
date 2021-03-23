@@ -5,7 +5,7 @@ Kirki::add_field( 'bizberg', array(
 	'settings'    => 'top_header_status',
 	'label'       => esc_html__( 'Disable Top Bar', 'bizberg' ),
 	'section'     => 'top-header',
-	'default'     => true
+	'default'     => apply_filters( 'bizberg_top_header_status', true )
 ) );
 
 Kirki::add_field( 'bizberg', [
