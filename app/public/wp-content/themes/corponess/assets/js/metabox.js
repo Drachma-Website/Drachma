@@ -1,1 +1,0 @@
-jQuery(document).ready(function(){jQuery("#corponess-ui-tabs").tabs()});

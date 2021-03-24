@@ -1,7 +1,7 @@
 [PHP]
 engine = On
 {{#if os.windows}}
-extension_dir="{{extensionsDir}}"
+extension_dir="{{extension_dir}}"
 {{/if}}
 
 ; Maxes
@@ -79,7 +79,7 @@ extension=php_curl.dll
 extension=php_gettext.dll
 extension=php_openssl.dll
 extension=php_exif.dll
-extension=php_gd.dll
+extension=php_gd2.dll
 extension=php_ftp.dll
 extension=php_imap.dll
 extension=php_bz2.dll
@@ -87,6 +87,7 @@ extension=php_mbstring.dll
 extension=php_sodium.dll
 extension=php_tidy.dll
 extension=php_xsl.dll
+extension=php_xmlrpc.dll
 extension=php_soap.dll
 extension=php_mysqli.dll
 extension=php_pdo_mysql.dll
@@ -198,7 +199,7 @@ ldap.max_links = -1
 {{#if os.windows}}
 zend_extension = php_opcache.dll
 {{else}}
-zend_extension = {{extensionsDir}}/opcache.so
+zend_extension = {{extensions.opcache}}
 {{/if}}
 
 opcache.enable=1
@@ -208,13 +209,13 @@ opcache.enable_cli=1
 {{#if os.windows}}
 zend_extension = php_xdebug.dll
 {{else}}
-zend_extension = {{extensionsDir}}/xdebug.so
+zend_extension = {{extensions.xdebug}}
 {{/if}}
 
-xdebug.mode=debug
-xdebug.client_port="9000"
-xdebug.start_with_request=yes
-xdebug.discover_client_host=yes
+xdebug.remote_enable=1
+xdebug.remote_connect_back=Off
+xdebug.remote_port="9000"
+xdebug.profiler_enable=0
 
 [Pcre]
 pcre.jit=0 {{! Disable due to limitation with macOS Notarization }}
